@@ -93,6 +93,14 @@ public class Centroid implements Comparable<Centroid> {
                 '}';
     }
 
+    public String toStringWithId() {
+        return "Centroid{" +
+                "centroid=" + centroid +
+                ", count=" + count +
+                ", id=" + id +
+                '}';
+    }
+
     @Override
     public int hashCode() {
         return id;
