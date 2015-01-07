@@ -72,6 +72,10 @@ public class GroupTree extends AbstractCollection<Centroid> {
                 left = new GroupTree(leaf);
                 right = new GroupTree(centroid);
                 leaf = centroid;
+            } else {
+                String msg = String.format("centroid.compareTo(leaf)==0 caused NPE! centroid='%s', leaf='%s'",
+                        centroid.toStringWithId(), leaf.toStringWithId());
+                throw new NullPointerException(msg);
             }
         } else if (centroid.compareTo(leaf) < 0) {
             left.add(centroid);
